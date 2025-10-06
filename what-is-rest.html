@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>What is REST?</title>
+	<script>
+		try {
+			const unlocked = localStorage.getItem('simulator_unlocked_what_is_rest_v1') === '1';
+			if (!unlocked) {
+				location.replace('./404.html');
+			}
+		} catch (e) {
+			location.replace('./404.html');
+		}
+	</script>
+</head>
+<body>
+	<h1>What is REST?</h1>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>HTTP Method Simulator</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="container">
+			<h1>HTTP Method Simulator</h1>
+			<p class="small">Choose a method, enter a URL or path, add arguments/payload, and click Send to perform a self-contained request against this site.
+			Use the classes database below by targeting <code>/courses</code> or <code>/courses/:id</code>.</p>
+
+			<section>
+				<h2>Classes</h2>
+				<p class="small">The classes database is stored in your browser (localStorage) and responds to RESTful requests at <code>/courses</code>.</p>
+				<div style="display:flex;gap:12px;align-items:center;margin-bottom:8px">
+					<button id="db-reset">Reset DB</button>
+					<input id="db-new-name" type="text" placeholder="New course title (e.g., Web Development)" />
+					<input id="db-new-id" type="text" placeholder="New course ID (e.g., CS4020)" />
+					<button id="db-add">Add item</button>
+				</div>
+				<div id="db-list" class="pre">-- loading DB --</div>
+			</section>
+
+		<div class="controls">
+			<label for="method">Method</label>
+			<select id="method" aria-label="HTTP method">
+				<option>GET</option>
+				<option>POST</option>
+				<option>PUT</option>
+				<option>PATCH</option>
+				<option>DELETE</option>
+				<option>HEAD</option>
+				<option>OPTIONS</option>
+			</select>
+
+			<label for="url">URL</label>
+			<input id="url" type="text" placeholder="/api/resource" />
+
+			<button id="send">Send</button>
+			<button id="clear">Clear</button>
+		</div>
+
+		<label for="args">Arguments / Body</label>
+		<textarea id="args" placeholder='{"name":"Alice"}'></textarea>
+
+		<div class="row">
+			<div class="panel">
+				<h3>Request</h3>
+				<div id="request" class="pre">-- no request yet --</div>
+			</div>
+			<div class="panel">
+				<h3>Response</h3>
+				<div id="response" class="pre">-- no response yet --</div>
+			</div>
+		</div>
+
+		<h3>cURL (example)</h3>
+		<div id="curl" class="pre">--</div>
+	</div>
+
+	<script src="simulator.js" defer></script>
+</body>
+</html>
