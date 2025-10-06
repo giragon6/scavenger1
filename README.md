@@ -1,0 +1,1 @@
+A scavenger hunt for beginners that uses a simulated API to teach concepts about REST and HTTP methods
